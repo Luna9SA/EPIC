@@ -1,1 +1,5 @@
-# EPIC
+# Epic
+MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+MYAPP_UPLOAD_STORE_PASSWORD=android
+MYAPP_UPLOAD_KEY_PASSWORD=android

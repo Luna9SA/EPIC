@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "749573260563",
+    "project_id": "eatance-a2883",
+    "storage_bucket": "eatance-a2883.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749573260563:android:c7b9f0feeb407d27d206e6",
+        "android_client_info": {
+          "package_name": "com.eatance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749573260563-pl64f69ge4iu0d0as5gcb4085sn3vh3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtvW2VxdhNeozAImcC_2ckCAEDttFZU1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749573260563-pl64f69ge4iu0d0as5gcb4085sn3vh3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

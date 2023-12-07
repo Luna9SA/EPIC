@@ -1,0 +1,56 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+permissions_path = '../node_modules/react-native-permissions/ios'
+
+platform :ios, '13.0'
+target 'Eatance' do
+  config = use_native_modules!
+  use_react_native!(:path => config["reactNativePath"])
+
+  #THIS IS FOR GOOGLE UTILITITES
+  pod 'GoogleUtilities', :modular_headers => true
+
+  #THIS IS FOR TAKE PERMISSION FROM DEVICE AR PER USING PERMSISSION 
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways.podspec"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse.podspec"
+
+  #TAKE PATH FROM NODE_MODULE FOR GOOGLE MAP USE
+  rn_maps_path = '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', :path => rn_maps_path
+
+  #FIREBASECORE
+  pod 'FirebaseCore', :modular_headers => true
+  
+  #LOCAL PAKCAGE PATH FOR PROJECT
+
+
+  target 'EatanceTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+  # use_flipper!
+  # post_install do |installer|
+  #   flipper_post_install(installer)
+  # end
+  # use_flipper!({ 'Flipper' => '0.74.0' })
+  post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
+  
+end
+
+# target 'Eatance-tvOS' do
+#   # Pods for Eatance-tvOS
+
+#   target 'Eatance-tvOSTests' do
+#     inherit! :search_paths
+#     # Pods for testing
+#   end
+# end
